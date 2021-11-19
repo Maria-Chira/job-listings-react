@@ -4,7 +4,7 @@ const Jumbotron = () => {
     return (
       <img
         className="Jumbotron"
-        alt="Jumbotron Image Blue Pattern"
+        alt="Jumbotron Blue Pattern"
         src={require("./images/bg-header-desktop.svg").default}
       />
     )}
