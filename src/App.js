@@ -9,7 +9,8 @@ function App() {
     <div className="App">
       <Jumbotron />
       {jobsList.map((job, index) => {
-        return <JobCard job={job} key={index}/>})}
+        return <JobCard job={job} key={index} />;
+      })}
     </div>
   );
 }

@@ -1,46 +1,23 @@
 import React from "react";
+import Logo from "./Logo";
+import JobFeatures from "./JobFeatures";
+import JobPositionHeading from "./JobPositionHeading";
+import JobDetails from "./JobDetails";
+import JobDescriptionSkills from "./JobDescriptionSkills";
 
 const JobCard = (props) => {
     return (
       <div className="CardContainer">
         <div className="ContainerLeft">
-          <img
-            className="CompanyLogo"
-            src={require(`${props.job.logo}`).default}
-            alt={`${props.job.company} logo`}
-          />
+          <Logo job={props.job} />
           <div className="JobFeatures">
-            <ul className="JobInfo">
-              <li className="CompanyName">{props.job.company}</li>
-              {props.job.new === true ? (
-                <li className="JobNew">NEW!</li>
-              ) : (
-                <li></li>
-              )}
-              {props.job.featured === true ? (
-                <li className="JobFeatured">FEATURED</li>
-              ) : (
-                <li></li>
-              )}
-            </ul>
-            <h2 className="JobPosition">{props.job.position}</h2>
-            <ul className="JobDetails">
-              <li>{props.job.postedAt}</li>
-              <li>{props.job.contract}</li>
-              <li>{props.job.location}</li>
-            </ul>
+            <JobFeatures job={props.job} />
+            <JobPositionHeading job={props.job} />
+            <JobDetails job={props.job} />
           </div>
         </div>
         <div>
-          <ul className="JobRequirements">
-            <li className="JobSkills">{props.job.role}</li>
-            <li className="JobSkills">{props.job.level}</li>
-            {props.job.languages.map((language, index) => (
-              <li className="JobSkills" key={index}>
-                {language}
-              </li>
-            ))}
-          </ul>
+          <JobDescriptionSkills job={props.job} />
         </div>
       </div>
     );
