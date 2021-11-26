@@ -10,6 +10,11 @@ const JobDescriptionSkills = (props) => {
             {language}
           </li>
         ))}
+        {props.job.tools.map((tool, index) => (
+          <li className="JobSkills" key={index}>
+            {tool}
+          </li>
+        ))}
       </ul>
     )
 }
